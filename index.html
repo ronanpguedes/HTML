@@ -1,0 +1,120 @@
+<HTML>
+
+<HEAD>
+	<TITLE> Cadastro de animais </TITLE>
+	<script>
+		// window.onload(){};
+		function validar(f) {
+			if (f.nome.value == "") {
+				alert("Preencha o nome corretamente");
+				f.nome.focus();
+				return false;
+			}
+			if (f.tutor.value.length < 10) {
+				alert("Preencha corretamente o nome do tutor");
+				f.tutor.focus();
+				return false;
+			}
+			if (f.senha.value != f.conf_senha.value) {
+				alert("Senha e configura&ccedl;$atilde; diferentes");
+				f.senha.focus();
+				return false;
+			}
+			if (f.sexo[0].checked == false && f.sexo[1].checked == false)
+				alert("Preencha o sexo");
+			return false;
+		}
+	</script>
+</HEAD>
+
+<BODY>
+	<H1> Cadastro de Animais </H1>
+
+	<FORM action="cadastro.php" method="GET" onsubmit="return validar(this);">
+
+		<TABLE>
+			<TR>
+				<TD> <label for="nome"> Nome </label> </TD>
+				<TD> <input type="text" name="nome" /></TD>
+			</TR>
+			<TR>
+				<TD> <label for="tutor"> Tutor </label> </TD>
+				<TD> <input type="text" name="tutor" /></TD>
+			</TR>
+			<TR>
+				<TD> <label for="telefone"> Telefone </label> </TD>
+				<TD> <input type="text" name="telefone" maxlength="10" /></TD>
+			</TR>
+			<TR>
+				<TD> <label for="f"> Fêmea </label> <input type="radio" value="f" name="sexo" /> </TD>
+				<TD> <label for="m"> Macho </label> <input type="radio" value="m" name="sexo" /></TD>
+			</TR>
+			<TR>
+				<TD> <label for="senha"> Senha </label> </TD>
+				<TD> <input type="password" name="senha" /></TD>
+			</TR>
+			<TR>
+				<TD> <label for="conf_senha"> Confirmação de Senha </label> </TD>
+				<TD> <input type="password" name="conf_senha" /></TD>
+			</TR>
+			<TR>
+				<TD> <label for="cpf">CPF:</label> </TD>
+				<TD> <input type="text" id="cpf" maxlength="14"></TD>
+			</TR>
+			<script>
+				const cpfInput = document.getElementById('cpf');
+
+				cpfInput.addEventListener('keydown', (event) => {
+					// Obtém o valor atual do campo CPF
+					let cpf = cpfInput.value;
+
+					/*const cpfInput = document.getElementById('cpf');
+
+					cpfInput.addEventListener('keydown', (event) => {
+ 					 // Permite apenas a entrada de números e os caracteres de controle
+ 					 if (event.key !== 'Backspace' && event.key !== 'Delete' && isNaN(parseInt(event.key))) {
+  					event.preventDefault();
+ 					 }
+					});*/
+
+					// Remove qualquer caractere que não seja número
+					cpf = cpf.replace(/\D/g, '');
+
+					/*cpfInput.addEventListener('keyup', () => {
+						let cpf = cpfInput.value;
+						cpf = cpf.replace(/\D/g, ''); // Remove tudo que não for número*/
+
+					// Adiciona os pontos e traço na formatação correta
+					if (cpf.length > 3 && cpf.length < 6) {
+						cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2');
+					} else if (cpf.length > 5 && cpf.length < 9) {
+						cpf = cpf.replace(/(\d{3})(\d{3})(\d)/, '$1.$2.$3');
+					} else if (cpf.length > 8 && cpf.length < 12) {
+						cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d)/, '$1.$2.$3-$4');
+					}
+
+					// Atualiza o valor do campo CPF
+					cpfInput.value = cpf;
+				});
+					/*if (cpf.length > 3 && cpf.length < 6) {
+					cpf = cpf.substr(0, 3) + '.' + cpf.substr(3);
+						} else if (cpf.length > 5 && cpf.length < 9) {
+					cpf = cpf.substr(0, 3) + '.' + cpf.substr(3, 3) + '.' + cpf.substr(6);
+					} else if (cpf.length > 8 && cpf.length < 12) {
+					cpf = cpf.substr(0, 3) + '.' + cpf.substr(3, 3) + '.' + cpf.substr(6, 3) + '-' + cpf.substr(9);
+						}
+
+					cpfInput.value = cpf;
+						});*/
+			</script>
+			<TR>
+				<TD colspan="2"> <input type="submit" value="Enviar" /> </TD>
+			</TR>
+		</TABLE>
+
+	</FORM>
+
+
+</BODY>
+
+</HTML>
