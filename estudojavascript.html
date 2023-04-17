@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estudo javascript</title>
+   
+    <div id="receita">
+        <p> corpo da receita </p>
+        <p> Auto. </p>
+    </div>
+    <from class="from_verde" id="contato">
+    Nome: <input type="text" id="nome" /> <br />
+    E-mail: <input type="text" id="E-mail" /> <br />
+    Texto: <input type="text" id="Texto" /> <br />
+    <input type="submit" value="Enviar"/>
+    </from>
+
+    <style type="text/css" media="all">
+        H1 {
+            color: "#90";
+        }
+
+        #chat {
+            background-color: brown;
+            border: 2px solid black;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-3.6.4.js">
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("btn-vermelha").onclick = mudar;
+            //btn.onclick = mudar;
+            //var tipo = btn.value;
+            // if(tipo="123")btn.onclick = mudar1;
+            //if(tipo="red")btn.onclick = mudar2;
+        }
+
+        function mudar() {
+            document.getElementById("cor").style.color = "red";
+        }
+        $(document).ready(function () {
+
+            $("#btn-vermelha").click(function () {
+                $("#cor").css("color", "#F00")
+            });
+
+            $("#f1").click(function () {
+                $("#chat").css("height", "250px");
+            });
+
+            $("#f2").click(function () {
+                $("p", $("#chat")).css("color", "green");
+            });
+            $("#f3").click(function () {
+                $("#receita").css("background-color", "red");
+                $(".form_verde").css("background-color", "green");
+
+                $("#receita, input, .from_verde ").css ("font-size", "20px");
+            });
+
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <h1 id="cor"> Cabecalho muda de cor </h1>
+    <button type="button" id="btn-vermelha"> Vermelho</button>
+
+    <div id="chat">
+
+        <p> Primeiro paragrafo </p>
+        <p> segundo paragrafo </p>
+    </div>
+    <button type="button" id="f1"> funcao 1</button>
+    <button type="button" id="f2"> funcao 2</button>
+    <button type="button" id="f3"> funcao 3</button>
+</body>
+
+</html>
