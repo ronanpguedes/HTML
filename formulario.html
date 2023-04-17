@@ -1,0 +1,120 @@
+<HTML>
+	<!-- HTML não é uma linguagem de programaçãp
+é uma linguagem de marcação	-->
+
+	<HEAD> 
+		<META charset="UTF-8"/>
+		<TITLE> Formulário de cadastro </TITLE>
+		<link rel="stylesheet" type="text/css" href="estilo.css" /></
+		<!-- Tudo que está aqui não é renderizado -->
+	</HEAD>
+	
+	<BODY>
+		<DIV id="conteudo">
+		
+		
+		<H1 id="nomeContato"> Jorge Ramon </H1>
+		
+		<FORM action="cadastrar.php" method="GET"> 
+		
+			<DIV id="parte1">
+				<DIV id="dados" class="esquerdo">
+				<TABLE>
+					<TR>
+						<TD> Primeiro Nome: </TD>
+						<TD> <INPUT type="text" name="primNome" size="35" /> </TD>
+					</TR>
+						<TD> Sobrenome: </TD>
+						<TD> <INPUT type="text" name="sobrenome" size="35"/> </TD>
+					<TR> 
+						<TD> Empresa: </TD>
+						<TD> <INPUT type="text" name="empresa" size="35" /> </TD>
+					</TR>
+					<TR> 
+						<TD> Titulação: </TD>
+						<TD> <INPUT type="text" name="tit" size="35" /> </TD>
+					</TR>
+				</TABLE>
+							  
+				</DIV> <!-- fim dados -->
+				
+				<DIV id="foto" class="direito">
+					<IMG src="foto.jpg" height="100px" />
+					<BR /><BR />
+					<INPUT type="file" name="foto" />
+				</DIV> <!-- fim foto -->
+				
+				<DIV class="gamb"> &nbsp; </DIV>
+				
+			</DIV> <!-- fim parte 1 -->
+			
+			<DIV id="parte2">
+				<DIV id="telefone" class="esquerdo">
+					<FIELDSET>
+						<!-- Conteiner - caixa -->
+						<LEGEND> Números de Telefone </LEGEND>
+							<TABLE>
+								<TR>
+									<TD> Casa: </TD>
+									<TD> <INPUT type="text" name="telCasa" /> </TD>
+								</TR>
+								<TR>
+									<TD> Empresa: </TD>
+									<TD> <INPUT type="text" name="telEmpresa"/></TD>
+								</TR>
+								<TR>
+									<TD> Celular:  </TD>
+									<TD> <INPUT type="text" name="telCelular"/></TD>
+								</TR>
+							</TABLE>
+					</FIELDSET>
+				</DIV>
+				<DIV id="internet" class="direito">
+					<FIELDSET>
+						<LEGEND> Internet </LEGEND>
+							<TABLE>
+								<TR>
+									<TD> E-mail: </TD>
+									<TD> <INPUT type="text" name="email"/> </TD>
+								</TR>
+								<TR>
+									<TD> Site: </TD>
+									<TD> <INPUT type="text" name="site" /> </TD>
+								</TR>
+								<TR>
+									<TD> Whatsapp: </TD>
+									<TD> <INPUT type="text" name="whats"/> </TD>
+								</TR>
+							</TABLE>
+					</FIELDSET>
+				</DIV>	
+				<DIV class="gamb"> &nbsp; </DIV>
+			</DIV> <!-- fim parte 2 -->
+			
+			<DIV id="parte3">
+				<FIELDSET>
+					<LEGEND> Endereços </LEGEND>
+					
+					<DIV id="empresa" class="esquerdo">
+						Empresa: <br /> <textarea name="endEmpresa" cols="30" rows="3" > teste 1 </textarea> <br />
+						<input type="radio" name="corresp" value="correspEmpresa"/> Correspondência <br />
+					</DIV>
+					
+					<DIV id="casa" class="direito">
+						Casa: <br /> <textarea name="endCasa" cols="30" rows="3"> teste 2 </textarea> <br />
+						<input type="radio" name="corresp" value="correspCasa" /> Correspondência <br />
+					</DIV>
+					
+				</FIELDSET>
+			</DIV><!--fim da parte 3-->
+			
+			<DIV id="parte4">
+				<input type="submit" value="Enviar" />
+				<input type="reset" value="Limpar" />
+			</DIV>
+			
+		</FORM>
+		
+		</DIV> <!-- div id=conteudo -->
+	</BODY>
+</HTML>
